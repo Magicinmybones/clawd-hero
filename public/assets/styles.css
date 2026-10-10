@@ -531,4 +531,42 @@ button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:poin
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 :focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+
+/* Opening frame only. The entrance script removes this class at completion. */
+html.entrance-pending .brand,
+html.entrance-pending .nav li,
+html.entrance-pending .cta-ghost,
+html.entrance-pending .burger{
+  opacity:0;
+  transform:translate3d(0,8px,0);
+}
+html.entrance-pending .headline span{
+  clip-path:inset(0 0 100% 0);
+  transform:translate3d(0,.18em,0);
+}
+html.entrance-pending .pitch,
+html.entrance-pending .cta-row,
+html.entrance-pending .tagline{
+  opacity:0;
+  transform:translate3d(0,12px,0);
+}
+html.entrance-pending .stat{
+  opacity:0;
+  transform:translate3d(0,12px,0) scale(.985);
+}
+@media (prefers-reduced-motion:reduce){
+  html.entrance-pending .brand,
+  html.entrance-pending .nav li,
+  html.entrance-pending .cta-ghost,
+  html.entrance-pending .burger,
+  html.entrance-pending .headline span,
+  html.entrance-pending .pitch,
+  html.entrance-pending .cta-row,
+  html.entrance-pending .tagline,
+  html.entrance-pending .stat{
+    opacity:1;
+    transform:none;
+    clip-path:none;
+  }
+}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
